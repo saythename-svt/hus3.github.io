@@ -19,7 +19,7 @@ h1 {
   margin: auto;
   min-height: 100vh;
   border: 2px solid #810f7c;
-  border-radius: 25px
+  border-radius: 25px;
   overflow: hidden;
 }
 #header {
