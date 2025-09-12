@@ -7,6 +7,34 @@ body {
   background-color: #edf8fb;
   color: #8c96c6;
   text-align: center;
+  margin: 0;
 h1 {
   color: #810f7c;
+  padding: 5px;
+  margin: 0;
+}
+#body-container {
+  background-color: #810f7c;
+  max-width: 1000px;
+  margin: auto;
+  min-height: 100vh;
+  border: 2px solid #810f7c;
+  border-radius: 25px
+  overflow: hidden;
+}
+#header {
+  background-color: #8c96c6;
+}
+#profile-picture {
+  float: left;
+}
+#welcome-text {
+  padding-top: 25px;
+  font-size: 25px;
+}
+#hobbies {
+  text-align: left;
+  font-size: 25px;
+  position: relative;
+  left: 50px;
 }
