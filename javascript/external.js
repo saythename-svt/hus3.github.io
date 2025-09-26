@@ -7,10 +7,8 @@ for (var i=0; i < arr.length; i++)
 document.write(user_name);*/
 var webmaps =
 [
-  ["The primary purpose of this web mapping application is to show the location of houses for sale approximate to the location or zip code you enter into the search function.","The web map performed better than I expected it to.",
-    "The interface feels very modern and smooth, which is quite enjoyable."],
-    ["The primary purpose of this web mapping application is to show which commissioner precinct a location or address in Harris County falls.",
-    "This is not really a web application I would expect to be super fancy and do a lot of interesting things.","One of its strengths is its simplicity; I can get the exact information I need, and I can get it quickly andaccurately."]
+  ["Zillow Review","https://www.zillow.com/","This web mapping application does well in its purpose; it was made to show where listed houses are, and it does just that. The interface also feels very modern and smooth, which is quite enjoyable."],
+    ["Harris County Commissioner Precinct Review","https://www.harriscountytx.gov/Harris-County-Commissioner-Court-Precincts","This web mapping application works at a basic, simple level and does what it is supposed to do. In fact, one of its strengths is its simplicity; I can get the exact information I need, and I can get it quickly and accurately."]
 ];
 
 function welcome()
