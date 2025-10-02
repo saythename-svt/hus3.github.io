@@ -26,13 +26,25 @@ function webmap_table()
   document.write("<table width=100%>");
   for (var row=0; row < webmaps.length; row++)
   {
-    document.write("<tr>");
-    for (var column=0; column < webmaps[0].length; column++)
-    {
-      document.write("<td>" + webmaps[row][column] + "</td>");
-    }
-    document.write("</tr>");
+    if (row % 2 == 0) {
+      document.write("<tr style='background-color: #810f7c;'>");
+      } else {
+        document.write("<tr>");
+      }
+      document.write("<td>" + webmaps[row][0] + "</td>");
+      // this is the title
+      document.write("<td>" + webmaps[row][1] + "</td>");
+      // this is the URL
+      document.write("</tr>");
+    if (row % 2 == 0) {
+      document.write("<tr style='background-color: #810f7c;'>");
+      } else {
+        document.write("<tr>");
+      }
+      document.write("<td colspan='2'>" + webmaps[row][2] + "</td>");
+      // this is the description
+      document.write("</tr>");
   }
   document.write("</table>");
   return "";
- }
+}
