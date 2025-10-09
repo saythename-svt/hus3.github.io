@@ -92,6 +92,85 @@
         }
       });
       (new ZoomViewer).addTo(mymap);*/
+      //unique icons//
+      var TajUnique = L.divIcon({
+        className: 'custom-icon',
+        html: '<div style="background-color: #ff0000; width: 20px; height: 20px; border-radius: 50%;"></div>',
+        iconSize: [20, 20]
+      });
+      var WallUnique = L.divIcon({
+        className: 'custom-icon',
+        html: '<div style="background-color: #9370DB; width: 20px; height: 20px; border-radius: 50%;"></div>',
+        iconSize: [20, 20]
+      });
+      var PetraUnique = L.divIcon({
+        className: 'custom-icon',
+        html: '<div style="background-color: #ff1493; width: 20px; height: 20px; border-radius: 50%;"></div>',
+        iconSize: [20, 20]
+      });
+      var ChristUnique = L.divIcon({
+        className: 'custom-icon',
+        html: '<div style="background-color: #FF4500; width: 20px; height: 20px; border-radius: 50%;"></div>',
+        iconSize: [20, 20]
+      });
+      var MPUnique = L.divIcon({
+        className: 'custom-icon',
+        html: '<div style="background-color: #cc00cc; width: 20px; height: 20px; border-radius: 50%;"></div>',
+        iconSize: [20, 20]
+      });
+      var CIUnique = L.divIcon({
+        className: 'custom-icon',
+        html: '<div style="background-color: #666666; width: 20px; height: 20px; border-radius: 50%;"></div>',
+        iconSize: [20, 20]
+      });
+      var ColUnique = L.divIcon({
+        className: 'custom-icon',
+        html: '<div style="background-color: #00cc00; width: 20px; height: 20px; border-radius: 50%;"></div>',
+        iconSize: [20, 20]
+      });
+      var TajMahal = L.marker([27.174961, 78.042385], {icon: TajUnique}).addTo(mymap);
+      var GreatWallofChina = L.marker([40.334245, 116.477652], {icon: WallUnique}).addTo(mymap);
+      var Petra = L.marker([30.328611, 35.441944], {icon: PetraUnique}).addTo(mymap);
+      var Christ = L.marker([-22.951389, -43.2108334], {icon: ChristUnique}).addTo(mymap);
+      var MachuPicchu = L.marker([-13.163056, -72.545556], {icon: MPUnique}).addTo(mymap);
+      var ChichenItza = L.marker([20.682778, -88.569167], {icon: CIUnique}).addTo(mymap);
+      var Colosseum = L.marker([41.890169, 12.492269], {icon: ColUnique}).addTo(mymap);
+      //text and photo popups//
+      TajMahal.bindPopup(`
+          <b>India's Taj Mahal</b><br>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Taj_Mahal%2C_Agra%2C_India_edit3.jpg/300px-Taj_Mahal%2C_Agra%2C_India_edit3.jpg" width="200"><br>
+          <p>The Taj Mahal is an ivory-white marble mausoleum in Agra, India. It was built by Mughal emperor Shah Jahan in memory of his wife and is one of the most beautiful buildings in the world.</p>
+      `);
+      GreatWallofChina.bindPopup(`
+          <b>Great Wall of China</b><br>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg/300px-The_Great_Wall_of_China_at_Jinshanling-edit.jpg" width="200"><br>
+          <p>The Great Wall of China is a series of fortifications built across northern China. It stretches over 13,000 miles and was built to protect Chinese states from invasions.</p>
+      `);
+      Petra.bindPopup(`
+          <b>Petra in Jordan</b><br>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/The_Monastery%2C_Petra%2C_Jordan8.jpg/300px-The_Monastery%2C_Petra%2C_Jordan8.jpg" width="200"><br>
+          <p>Petra is an ancient city in Jordan famous for its rock-cut architecture. The buildings are carved directly into pink sandstone cliffs, creating a stunning archaeological site.</p>
+      `);
+      Christ.bindPopup(`
+          <b>Brazil's Statue of Christ the Redeemer</b><br>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Christ_the_Redeemer_-_Cristo_Redentor.jpg/225px-Christ_the_Redeemer_-_Cristo_Redentor.jpg" width="200"><br>
+          <p>Christ the Redeemer is a massive statue of Jesus Christ in Rio de Janeiro, Brazil. Standing 98 feet tall atop Corcovado mountain, it overlooks the city with outstretched arms.</p>
+      `);
+      MachuPicchu.bindPopup(`
+          <b>Peru's Machu Picchu</b><br>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Machu_Picchu%2C_Peru.jpg/300px-Machu_Picchu%2C_Peru.jpg" width="200"><br>
+          <p>Machu Picchu is a 15th-century Inca citadel high in the Andes Mountains of Peru. This "Lost City of the Incas" features amazing stone construction and breathtaking mountain views.</p>
+      `);
+      ChichenItza.bindPopup(`
+          <b>Mexico's Chichen Itza Pyramid</b><br>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Chichen_Itza_3.jpg/300px-Chichen_Itza_3.jpg" width="200"><br>
+          <p>Chichen Itza is a large Mayan archaeological site in Mexico. The famous El Castillo pyramid demonstrates the Maya's advanced knowledge of astronomy and mathematics.</p>
+      `);
+      Colosseum.bindPopup(`
+          <b>The Colosseum in Rome</b><br>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/300px-Colosseo_2020.jpg" width="200"><br>
+          <p>The Colosseum is an ancient amphitheater in Rome, Italy. Built nearly 2,000 years ago, it could seat 50,000 spectators and hosted gladiator fights and public events.</p>
+      `);
       mymap.setView([0,0], 1);
       </script>
     </div>
