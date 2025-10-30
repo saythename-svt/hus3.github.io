@@ -1,13 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>WebMapping Lab 7 Map</title>
+  <!--used tile layer map code for map content-->
+    <title>Lab 7 Map</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/map_style.css">
-</head>
-<body>
+    <meta name="viewport" content = "initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="css/lab7_homework.css">
+    <link rel = "stylesheet" href = "https://js.arcgis.com/4.21/esri/themes/light/main.css"/>
+    <script src = "https://js.arcgis.com/4.21/"> </script>
+    <style>
+      html, body, #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;}
+    </style>
+    <script>
+      require(["esri/Map", "esri/views/MapView", "esri/layers/TileLayer", "esri/layers/FeatureLayer"], function (Map, MapView, TileLayer, FeatureLayer) {        var TransportationLayer = new TileLayer({
+          url: "https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer"
+        });
+        //updated tile layer map with selected service feature url
+        var NationalParksLayer = new FeatureLayer({
+            url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/ArcGIS/rest/services/National_Park_Boundaries/FeatureServer"
+        });
+
+        var map = new Map({
+          basemap: "oceans",
+          layers: [TransportationLayer, NationalParksLayer]
+        });
+
+        var view = new MapView({
+          container: "viewDiv",
+          map: map,
+          zoom: 4,
+          center: [-98, 39] //adjusted zoom and center so the map didnt immediately show California//
+        });
+
+        document.getElementById("regionSelect").addEventListener("change", function(event) {
+          var region = event.target.value;
+          //defined coordinates and zoom levels for regions//
+          var regions = {
+            all: { center: [-98, 39], zoom: 4 },
+            west: { center: [-112, 38], zoom: 5 },
+            alaska: { center: [-152, 64], zoom: 4 },
+            east: { center: [-80, 38], zoom: 5 }
+          };
+          //code so the selected query would animate to the selected region
+          if (regions[region]) {
+            view.goTo({
+              center: regions[region].center,
+              zoom: regions[region].zoom
+            }, {
+              duration: 2000  //animation duration for a smoother animation
+            });
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="viewDiv">
+<!--added code for the query dropdown-->
+      <div id="queryDropdown">
+        <label for="regionSelect">Select Region:</label>
+        <select id="regionSelect">
+          <option value="all">All Parks</option>
+          <option value="west">Western USA</option>
+          <option value="alaska">Alaska</option>
+          <option value="east">Eastern USA</option>
+        </select>
+      </div>
+<!--reused previous code from personal webpage for copyright-->
+        <div id="copyright">
+            <script>
+                var today = new Date();
+                var year = today.getFullYear();
+                document.writeln("Copyright &copy; " + year);
+            </script>
+        </div>
+    </div>
+<!--added tile layer dropdown button conent links-->
     <div class="dropdown">
-        <button class="dropbtn">Tile Layer</button>
+        <button class="dropbtn">Tile Layers</button>
         <div class="dropdown-content">
             <a href="https://saythename-svt.github.io/hus3.github.io/basemap_gallery.html" target="_blank">Basemap Gallery</a>
             <a href="https://saythename-svt.github.io/hus3.github.io/tile_layer.html" target="_blank">Tile Layer</a>
@@ -16,7 +90,5 @@
             <a href="https://saythename-svt.github.io/hus3.github.io/dynamic_layers.html" target="_blank">Dynamic Layers</a>
             <a href="https://saythename-svt.github.io/hus3.github.io/on_event.html" target="_blank">On Event</a>
         </div>
-    </div>
-
 </body>
 </html>

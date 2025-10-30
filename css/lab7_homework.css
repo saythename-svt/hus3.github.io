@@ -1,0 +1,96 @@
+/*tile layer dropdown button, code reused from group project, but specifics changed for this project*/
+.dropbtn {
+    background-color: #7f7d9c;
+    color: white;
+    padding: 10px 15px;  /*matched  to tile layer dropdownquery dropdown padding*/
+    font-size: 14px;  /*matched query dropdown font*/
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 65px;  /*positioned below query dropdown*/
+  right: 165px;
+  z-index: 999;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #FFFFFF;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #FFFFFF;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #adadc9;
+}
+/*lab 7 map style*/
+#viewDiv {
+    position: relative;
+}
+/*copyright style so it sits in a footer at the bottom of the page*/
+#copyright {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 15px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 1000;
+}
+/*query dropdown style made to somewhat match tile layer dropdown*/
+#queryDropdown {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    z-index: 1000;#queryDropdown {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+#queryDropdown label {
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+#queryDropdown select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
